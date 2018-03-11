@@ -8,16 +8,14 @@ AllCops:
    - bin/*
 Metrics/LineLength:
  Max: 100
-Style/StringLiterals:
- Enabled: false
+Metrics/AbcSize:
+  Max: 20
 AlignParameters:
  Enabled: false
 Documentation:
  Enabled: false
 LineLength:
  Max: 100
-Metrics/AbcSize:
- Max: 20
 MethodLength:
  CountComments: false
  Max: 15
@@ -26,6 +24,8 @@ ClassLength:
  Max: 200
 Style/AlignHash:
  Enabled: false
+Style/StringLiterals:
+  Enabled: false
 Style/MultilineMethodCallIndentation:
  EnforcedStyle: indented
 Style/DotPosition:
@@ -34,8 +34,7 @@ Style/FrozenStringLiteralComment:
  Enabled: false
 Style/StringLiteralsInInterpolation:
  Enabled: false
-Naming/FileName:
- Enabled: false
 Style/ClassAndModuleChildren:
  Enabled: false
- 
+Naming/FileName:
+  Enabled: false
