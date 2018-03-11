@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180310134810) do
     t.string "name"
     t.string "category"
     t.integer "user_id"
+    t.string "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_ingredients_on_user_id"
