@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'pathname'
 require 'fileutils'
-module FileUtils
+include FileUtils
 
   # path to your application root.
   APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
@@ -36,4 +36,3 @@ module FileUtils
     puts "\n== Restarting application server =="
     system! 'bin/rails restart'
   end
-end
