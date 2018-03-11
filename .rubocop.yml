@@ -5,6 +5,7 @@ AllCops:
  Exclude:
    - db/**/*
    - config/**/*
+   - bin/*
 Metrics/LineLength:
  Max: 100
 Style/StringLiterals:
@@ -30,4 +31,10 @@ Style/MultilineMethodCallIndentation:
 Style/DotPosition:
  EnforcedStyle: leading
 Style/FrozenStringLiteralComment:
+ Enabled: false
+Style/StringLiteralsInInterpolation:
+ Enabled: false
+Naming/FileName:
+ Enabled: false
+Style/ClassAndModuleChildren:
  Enabled: false
