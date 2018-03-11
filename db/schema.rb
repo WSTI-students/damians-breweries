@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< 5055e40196e24281ae698fe5c9090c6d38f67fcf
 <<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180310124153) do
 
@@ -27,6 +28,9 @@ ActiveRecord::Schema.define(version: 20180310124153) do
     t.index ["user_id"], name: "index_recipes_on_user_id"
 =======
 ActiveRecord::Schema.define(version: 20180310134810) do
+=======
+ActiveRecord::Schema.define(version: 20180311143537) do
+>>>>>>> Adds table Recipes
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -36,7 +40,20 @@ ActiveRecord::Schema.define(version: 20180310134810) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_ingredients_on_user_id"
+  end
 
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.integer "style_id"
+    t.integer "user_id"
+    t.string "custom_style"
+    t.string "description"
+    t.string "process_desc"
+    t.string "visibility_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["style_id"], name: "index_recipes_on_style_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
