@@ -34,7 +34,7 @@ Style/FrozenStringLiteralComment:
  Enabled: false
 Style/StringLiteralsInInterpolation:
  Enabled: false
-Naming/FileName:
- Enabled: false
 Style/ClassAndModuleChildren:
  Enabled: false
+Naming/FileName:
+  Enabled: false
