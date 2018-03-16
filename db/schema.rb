@@ -10,8 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180310124153) do
+ActiveRecord::Schema.define(version: 20180310162056) do
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.integer "user_id"
+    t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_ingredients_on_user_id"
+  end
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
@@ -25,18 +34,11 @@ ActiveRecord::Schema.define(version: 20180310124153) do
     t.datetime "updated_at", null: false
     t.index ["style_id"], name: "index_recipes_on_style_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
-=======
-ActiveRecord::Schema.define(version: 20180310134810) do
+  end
 
-  create_table "ingredients", force: :cascade do |t|
+  create_table "styles", force: :cascade do |t|
     t.string "name"
-    t.string "category"
-    t.integer "user_id"
-    t.string "unit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_ingredients_on_user_id"
-
+    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,7 +56,6 @@ ActiveRecord::Schema.define(version: 20180310134810) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
->>>>>>> a777d4ba6806310169ecbb47c24edca33db39bab
   end
 
 end
