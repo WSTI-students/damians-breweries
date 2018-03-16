@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< cc6e509c4ccecb4ae017e79b812eae3587e4e903
 <<<<<<< 5055e40196e24281ae698fe5c9090c6d38f67fcf
 <<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180310124153) do
@@ -31,6 +32,13 @@ ActiveRecord::Schema.define(version: 20180310134810) do
 =======
 ActiveRecord::Schema.define(version: 20180311143537) do
 >>>>>>> Adds table Recipes
+=======
+<<<<<<< Updated upstream
+ActiveRecord::Schema.define(version: 20180311143537) do
+=======
+ActiveRecord::Schema.define(version: 20180310162056) do
+>>>>>>> Stashed changes
+>>>>>>> Adds additional tables + migration
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -54,6 +62,14 @@ ActiveRecord::Schema.define(version: 20180311143537) do
     t.datetime "updated_at", null: false
     t.index ["style_id"], name: "index_recipes_on_style_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
+<<<<<<< Updated upstream
+=======
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+>>>>>>> Stashed changes
   end
 
   create_table "users", force: :cascade do |t|
