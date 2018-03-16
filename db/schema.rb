@@ -10,35 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< cc6e509c4ccecb4ae017e79b812eae3587e4e903
-<<<<<<< 5055e40196e24281ae698fe5c9090c6d38f67fcf
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180310124153) do
-
-  create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.integer "style_id"
-    t.integer "user_id"
-    t.string "custom_style"
-    t.string "description"
-    t.string "process_desc"
-    t.string "visibility_level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["style_id"], name: "index_recipes_on_style_id"
-    t.index ["user_id"], name: "index_recipes_on_user_id"
-=======
-ActiveRecord::Schema.define(version: 20180310134810) do
-=======
-ActiveRecord::Schema.define(version: 20180311143537) do
->>>>>>> Adds table Recipes
-=======
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(version: 20180311143537) do
-=======
-ActiveRecord::Schema.define(version: 20180310162056) do
->>>>>>> Stashed changes
->>>>>>> Adds additional tables + migration
+ActiveRecord::Schema.define(version: 20180316172435) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -50,6 +22,14 @@ ActiveRecord::Schema.define(version: 20180310162056) do
     t.index ["user_id"], name: "index_ingredients_on_user_id"
   end
 
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.integer "ingredients_id"
+    t.integer "recipes_id"
+    t.float "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.integer "style_id"
@@ -62,14 +42,11 @@ ActiveRecord::Schema.define(version: 20180310162056) do
     t.datetime "updated_at", null: false
     t.index ["style_id"], name: "index_recipes_on_style_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
-<<<<<<< Updated upstream
-=======
   end
 
   create_table "styles", force: :cascade do |t|
     t.string "name"
     t.string "description"
->>>>>>> Stashed changes
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,7 +64,6 @@ ActiveRecord::Schema.define(version: 20180310162056) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
->>>>>>> a777d4ba6806310169ecbb47c24edca33db39bab
   end
 
 end
