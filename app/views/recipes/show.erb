@@ -1,0 +1,10 @@
+<h1><%= @recipe.name %></h1>
+<p>
+  <%= @recipe.style.name %>
+  <%= link_to "Edit", edit_recipe_path(@recipe) %>
+</p>
+
+<h2>Description</h2>
+<p><%= @recipe.description %>
+<h2>Process description</h2>
+<p><%= @recipe.process_desc %></p>

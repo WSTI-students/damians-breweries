@@ -1,0 +1,23 @@
+<h1>Recipies</h1><span><%= link_to "Add new", new_recipe_path %></span>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Style</th>
+      <th scope="col">Process</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipies.each do |recipe| %>
+      <tr>
+        <th><%= recipe.name %></th>
+        <th><%= recipe.description %></th>
+        <th><%= recipe.process_desc %></th>
+        <th><%= recipe.style.name %></th>
+        <th><%= link_to ">>>", recipe_path(recipe) %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
