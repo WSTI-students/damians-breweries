@@ -1,18 +1,12 @@
 Recipes new
-<%= form_for @recipe, :method => "POST"  do |f| %>
-	<%= f.label :name %>:
-  	<%= f.text_field :name %><br />
-  	<%= f.label :description %>
-  	<%= f.text_area(:description, :size => "50x10") %>
-  	<br/ >
-  	<%= f.label :style %>
-  	<select name="recipe[style_id]">
-  		<% @styles.each do |s| %>
-  			<%= raw "<option value=\"#{s.id}\">#{s.name}</option>" %>
-  		<% end %> 		
-  	</select>
-  	<br />
-  	<%= f.label :process_desc %>
-  	<%= f.text_area(:process_desc, :size => "50x10") %>
-  	<%= f.submit %>
+<%= form_for recipe_form, url: recipes_path do |f| %>
+	<%= f.label :name %>
+	<p><%= f.text_field :name %></p>
+	<%= f.label :description %>
+	<p><%= f.text_area :description %></p>
+	<%= f.label "Process description" %>
+	<p><%= f.text_field :process_desc %></p>
+	<%= f.label :style_id %>
+	<p><%= select_tag "recipe_form[style_id]", options_from_collection_for_select(styles, :id, :name) %></p>
+	<%= f.submit "Create Recipe" %>
 <% end %>
