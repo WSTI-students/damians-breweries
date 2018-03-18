@@ -5,12 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'bootstrap', '~> 4.0.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'haml'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+gem 'jquery-rails'
 gem 'devise'
 
 # Use Puma as the app server
@@ -41,6 +41,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', require: false
   gem 'web-console', '>= 3.3.0'
+  gem 'pry-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

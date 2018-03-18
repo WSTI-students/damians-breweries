@@ -1,0 +1,8 @@
+<h1>Edit <%= @recipe.name %></h1>
+<%= form_for recipe_form, url: recipe_path(@recipe), method: :put do |f| %>
+	<p><%= f.text_field :name, value: @recipe.name %></p>
+	<p><%= f.text_area :description, value: @recipe.description, cols: 33 %></p>
+	<p><%= f.text_area :process_desc, value: @recipe.process_desc, cols: 33 %></p>
+	<p>Style: <%= select_tag "recipe_form[style_id]", options_from_collection_for_select(styles, :id, :name) %></p>
+	<%= f.submit "Update Recipe", class: "btn btn-primary btn-sm" %>
+<% end %>
