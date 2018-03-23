@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @recipies.each do |recipe| %>
+    <% @recipes.each do |recipe| %>
       <tr>
         <th><%= recipe.name %></th>
         <th><%= recipe.description %></th>
@@ -21,3 +21,6 @@
     <% end %>
   </tbody>
 </table>
+<% if @recipes.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% end %>

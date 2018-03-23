@@ -9,8 +9,11 @@ class Recipe < ApplicationRecord
     Style.all
   end
 
+  def self.search(search)
+    where("name LIKE ? ", "%#{search}%") 
+  end
+
   def style
     Style.find(self.style_id) if self.style_id
   end
 end
-
