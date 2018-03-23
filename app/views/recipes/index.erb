@@ -17,6 +17,10 @@
         <th><%= recipe.process_desc %></th>
         <th><%= recipe.style.name %></th>
         <th><%= link_to ">>>", recipe_path(recipe) %></th>
+        <th><%= link_to 'Delete',
+                          recipe_path(recipe),
+                           method: :delete,
+                           data: { confirm: 'Are you sure?' } %></th>
       </tr>
     <% end %>
   </tbody>
