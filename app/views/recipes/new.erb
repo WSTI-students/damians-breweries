@@ -4,5 +4,8 @@
 	<p><%= f.text_area :description, placeholder: "Description", cols: 33 %></p>
 	<p><%= f.text_area :process_desc, placeholder: "Process description", cols: 33 %></p>
 	<p>Style: <%= select_tag "recipe_form[style_id]", options_from_collection_for_select(styles, :id, :name) %></p>
+	<div class="ingredients_wrap">
+		<input type="button" class="add_ingredient_button" value="Add ingredient"><br />
+	</div>
 	<%= f.submit "Create Recipe", class: "btn btn-primary btn-sm" %>
 <% end %>

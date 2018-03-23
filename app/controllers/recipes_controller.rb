@@ -21,7 +21,8 @@ end
 
   def create
     recipe_form = RecipeForm.new(recipe_params)
-    CreateRecipe.new(user: current_user, form: recipe_form).call
+    recipe = CreateRecipe.new(user: current_user, form: recipe_form).call
+    AddIngredientsToRecipe.new(recipe: recipe, form: recipe_form).call
   end
 
   def edit
@@ -41,6 +42,6 @@ end
   private
 
   def recipe_params
-	  params.require(:recipe_form).permit(:name, :description, :process_desc, :style_id)
+	  params.require(:recipe_form).permit(:name, :description, :process_desc, :style_id, :ingredients, :ingredients_custom, :ingredients_quantity)
   end
 end
