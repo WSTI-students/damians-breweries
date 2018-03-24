@@ -19,6 +19,13 @@ end
     render locals: { recipe_form: recipe_form, styles: styles }
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+
+    redirect_to recipes_path
+  end
+
   def create
     recipe_form = RecipeForm.new(recipe_params)
     recipe = CreateRecipe.new(user: current_user, form: recipe_form).call
