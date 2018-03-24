@@ -13,7 +13,7 @@ class AddIngredientsToRecipe
   	  	else
   	  	  ingredient = Ingredient.find(value)
   	  	end
-  	  	RecipeIngredients.create(recipe_id: @recipe.id, ingredient_id: ingredient.id, quantity: @form.ingredients_quantity[index]);
+  	  	RecipeIngredient.create(recipe_id: @recipe.id, ingredient_id: ingredient.id, quantity: @form.ingredients_quantity[index]);
   	  end
   	end
   end
