@@ -45,6 +45,7 @@ end
     recipe = Recipe.find(params[:id])
     recipe_form = RecipeForm.new(recipe_params, recipe)
     UpdateRecipe.new(recipe: recipe, form: recipe_form).call
+    redirect_to action: 'index'
   end
 
   private
