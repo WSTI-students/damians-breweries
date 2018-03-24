@@ -30,6 +30,7 @@ end
     recipe_form = RecipeForm.new(recipe_params)
     recipe = CreateRecipe.new(user: current_user, form: recipe_form).call
     AddIngredientsToRecipe.new(recipe: recipe, form: recipe_form, current_user: current_user).call
+    redirect_to action: 'index'
   end
 
   def edit
@@ -50,8 +51,5 @@ end
 
   def recipe_params
 	  params.require(:recipe_form).permit(:name, :description, :process_desc, :style_id, {:ingredients => []}, {:ingredients_custom => []}, {:ingredients_quantity => []})
-    # params.require(:recipe_form).permit({:ingredients => []})
-    # params.require(:recipe_form).permit({:ingredients_custom => []})
-    # params.require(:recipe_form).permit({:ingredients_quantity => []})
   end
 end
