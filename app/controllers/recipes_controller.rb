@@ -20,11 +20,11 @@ end
   end
 
   def destroy
-  @recipe = Recipe.find(params[:id])
-  @recipe.destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
 
-  redirect_to recipes_path
-end
+    redirect_to recipes_path
+  end
 
   def create
     recipe_form = RecipeForm.new(recipe_params)
