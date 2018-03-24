@@ -1,4 +1,7 @@
-<h1>Recipies</h1><span><%= link_to "Add new", new_recipe_path %></span>
+<h1>Recipies</h1>
+  <% if user_signed_in? %>
+    <span><%= link_to "Add new", new_recipe_path %></span>
+  <% end %>
 <table class="table">
   <thead>
     <tr>
