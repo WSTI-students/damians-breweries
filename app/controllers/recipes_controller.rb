@@ -31,7 +31,7 @@ end
     recipe_form = RecipeForm.new(recipe_params)
     recipe = CreateRecipe.new(user: current_user, form: recipe_form).call
     AddIngredientsToRecipe.new(recipe: recipe, form: recipe_form, current_user: current_user).call
-    redirect_to action: 'index'
+    redirect_to recipes_path
   end
 
   def edit
@@ -46,6 +46,7 @@ end
     recipe = Recipe.find(params[:id])
     recipe_form = RecipeForm.new(recipe_params, recipe)
     UpdateRecipe.new(recipe: recipe, form: recipe_form).call
+    redirect_to recipes_path
   end
 
   private
